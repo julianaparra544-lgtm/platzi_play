@@ -1,0 +1,19 @@
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: platzi_play_db
+      MYSQL_USER: naya
+      MYSQL_PASSWORD: naya_parra
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+volumes:
+  mysqldata:
+
